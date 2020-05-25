@@ -1,0 +1,862 @@
+@media (prefers-color-scheme: dark) {
+  
+/** Wikipedia Dark Mode *******
+ * Forked from MediaWiki:Gadget-Blackskin.css by [[:it:Utente:Kormoran]]
+ * Made by [[user:jltml]]
+ * Variable colors from https://developer.apple.com/design/human-interface-guidelines/ios/visual-design/color/
+ */
+:root {
+	--color-background: #000;
+	--color-body: #FFF;
+	--color-heading: #FFF;
+	--color-accent1: rgb(142, 142, 147);
+	--color-accent2: rgb(99, 99, 102);
+	--color-accent3: rgb(72, 72, 74);
+	--color-accent4: rgb(58, 58, 60);
+	--color-accent5: rgb(44, 44, 46);
+	--color-accent6: rgb(28, 28, 30);
+	--color-a: rgb(100, 210, 255);
+	--color-a-hover: rgb(10, 132, 255);
+	--color-test: #bf22ad;
+}
+@media screen {
+
+/* Selection highlight */
+/*
+::-moz-selection { color: #90FF90; background: var(--color-accent2); }
+::selection      { color: #90FF90; background: var(--color-accent2); } 
+*/
+
+/* Color buttons, drop downs, and input boxes */
+
+fieldset { 
+    border-color: var(--color-accent5);
+}
+legend {
+    border: 1px solid var(--color-accent5); /* @theme */
+}
+input[type="number"],
+input[type="text"],
+input:not([type]),
+select {
+    background-color: var(--color-accent5);
+    border-color: var(--color-accent2);  
+    color: var(--color-body);
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+}
+/* Color background */ 
+body, div#globalWrapper {
+    background-color: var(--color-background);
+    background-image: none /* Monobook background */;
+    color: var(--color-body);
+}
+#mw-page-base{
+    background:none /* Vector background */;
+}
+#content, .mw-body {
+    background-color: var(--color-background);
+    color : var(--color-body);
+    border-color : var(--color-accent2);
+}
+.ns-0 #content {
+    background : var(--color-background);
+}
+
+/* Color the links */
+a { color: var(--color-a); }
+a:visited { color: #9090D0; }
+a:active, a.new { color: #FF4040; }
+a.interwiki, a.external { color: #5386DB; }
+a.interwiki:visited, a.external:visited { color: #5386DB; }
+a.stub { color: #974253; }
+
+/* De-Color user signature links (black-on-black) */
+a:not([class]) font, a:not([class]) span, a:not([class]) bold {
+    background-color:inherit!important;
+    color:inherit!important;
+}
+/* Color user links */
+/*
+a[title^="User"], 
+a[title^="Special:Contributions/"] {
+    background-color:#010!important;
+    color: #7070FF!important;
+}/*-*/
+
+/* .mw-body-content .external {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMBAMAAACkW0HUAAAAFVBMVEUAAAAAAAAAZv8AZswAL14hZIUwYI+U+klIAAAAAXRSTlMAQObYZgAAADxJREFUCNdjgAMmJSUFIBUmKAiimAKBFLOxkSOIElQRCQRSQo5OakBKJEWZlQEo6CTMAKIEwZSxsTHcJAD6JwXY6XjSLgAAAABJRU5ErkJggg==);
+} */
+
+/* Headings */
+h1, #bodyContent h1,
+h2, #bodyContent h2,
+h3, #bodyContent h3,
+h4, #bodyContent h4,
+h5, #bodyContent h5,
+h6, #bodyContent h6 {
+    color: var(--color-body);
+    border-color:var(--color-accent2);
+}
+
+/* Color Table of Contents */
+#toc, .toc, .mw-warning, .toccolours, body.skin-monobook .toccolours { 
+    background-color: var(--color-accent6); 
+    border-color: var(--color-accent2); 
+}
+
+/* Images */
+/* .mw-body img {
+    border: 2px solid var(--color-accent2);
+    background-color: var(--color-background);
+} */
+
+/* Fix background of Tex images, which are black on transparent. */
+.mw-body img.mwe-math-fallback-image-inline {
+    background-color: #fff;
+    filter:invert(100%) hue-rotate(180deg);
+    border:none;
+}
+
+hr {
+    color: var(--color-accent5);
+    background-color: var(--color-accent5);
+}
+
+/* Color explanations with tool tips */
+abbr, acronym, .explain {
+    border-color: var(--color-accent5);
+    color: White;
+    background-color: var(--color-accent6);
+}
+
+/* Color code snippets */
+code { 
+    background-color: #00AA00; 
+    color: Black; 
+    border-color: #00AA00;
+    font-weight:bolder;/*XXX: Increase contrast*/
+}
+
+/* Color code blocks */
+pre, .mw-code {
+    border-style:dashed;
+    border-color:#00AA00;
+    color: White;
+    background-color: var(--color-accent6);
+}
+
+/* Color highlighted ref [[MediaWiki:Common.css]] */
+body.action-info .mw-body-content :target,
+body.mediawiki .citation:target {
+    background-color: rgba(0, 127, 255, 0.133);
+}
+
+/* Table background colors */
+table { 
+    background-color: var(--color-background)!important;
+    color: var(--color-body)!important;
+}
+table th {
+    background-color: #1D1C1C!important;
+    color: var(--color-body)!important;
+}
+table td {
+    background-color: var(--color-background)!important;
+    color: var(--color-body)!important; 
+}
+
+/* Tabular tables */
+table.wikitable {
+  border-color: var(--color-accent5) !important;
+  color: var(--color-body)!important;
+}
+table.wikitable th, table.wikitable td {
+  border-color: var(--color-accent5) !important;
+}
+table.wikitable th {
+  background-color: #1D1C1C!important;
+}
+table.wikitable td {
+  background-color: var(--color-background)!important;
+}
+
+/* JQuery sort arrows */
+table.jquery-tablesorter th.headerSort {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAJCAYAAADdA2d2AAAAPUlEQVR4AWMgCtxlkAPiA0CsREgpCQaC4X8gfggymJoG/sc0mHIDMQ2mE6DcpfQNU/rHPsJgBWg6VSBGOQB5WklTTHq/UAAAAABJRU5ErkJggg==);
+}
+table.jquery-tablesorter th.headerSortUp {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAECAYAAABhnXSoAAAAKklEQVR4AWMgCtxlkAPiA0CsREgpCQaC4X8gfggymJoG/kczmHIDSTEYACAWJKqhXDSPAAAAAElFTkSuQmCC);
+}
+table.jquery-tablesorter th.headerSortDown {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAECAYAAABhnXSoAAAALUlEQVR4AWPACe4yyAExCP7Hgh8CsRID6QBhMD4DKTQY00BKDVYA4gNgmggAAHjLJKrpYfWaAAAAAElFTkSuQmCC);
+}
+
+/* thumbnails */
+.ns-0 * #content div.thumb {
+    border-color: var(--color-background);
+}
+/* thumbnails */
+div.thumb {
+    margin-bottom: .5em;
+    border-style: solid;
+    border-color: var(--color-accent6);
+}
+div.thumb div {
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-accent6);
+    background-color: var(--color-accent5);
+}
+div.thumb div a img {
+    /* Transparent PNGs assume light color backgrounds :-( */
+    background-color:#103010;
+    /* TODO: Use film grain texture, so lines are more noticeable */
+    border: 1px solid var(--color-accent6);
+}
+div.thumb div a img:hover {
+    /* Increase brightness on hover */
+    background-color:#EEE;
+}
+div.thumb div div.thumbcaption {
+    border: none;
+    padding: .3em 0 .1em 0;
+}
+
+/* galleries */
+table.gallery {
+    border: 1px solid var(--color-accent6);
+    background-color: var(--color-accent5);
+}
+table.gallery td {
+    background-color: var(--color-accent5);
+    border: solid 2px white;
+}
+li.gallerybox div.thumb, body.mediawiki #content .gallerybox div.thumb {
+    background-color:transparent;
+    border: 1px solid var(--color-accent6);
+}
+
+/* Color category box */
+.catlinks {
+    border-color:#800080;
+    background-color:var(--color-background);
+    color: #00FFFF;
+}
+
+
+
+/* #################################
+ *          Interface Pages
+ * #################################
+ */
+.mw-ui-input:focus {
+    border-color: lime;
+    box-shadow: inset 0 0 0 1px lime;
+}
+.postedit, /* untested */
+.mw-notification { /* top right bubble */
+    background-color:var(--color-accent5);
+    border-color:var(--color-accent2);
+}
+
+/*
+** Diff rendering
+*/
+table.diff, td.diff-otitle, td.diff-ntitle {
+    background-color: var(--color-background);
+}
+td.diff-addedline {
+    color: var(--color-accent2);
+    background-color: var(--color-accent5);
+}
+td.diff-deletedline {
+    color: var(--color-accent2);
+    background-color: var(--color-accent5);
+}
+td.diff-context {
+    background-color: var(--color-background);
+    color: var(--color-accent2);
+}
+.diffchange {
+    color: #00dd00;
+}
+td.diff-deletedline .diffchange {
+    background-color:#403618;
+}
+td.diff-addedline .diffchange {
+    background-color:#273948;
+}
+
+/* Color the edit interface */
+.wikiEditor-ui {
+    background-color: var(--color-accent6);
+}
+.wikiEditor-ui-toolbar,
+.wikiEditor-ui-toolbar .sections .section {
+	background-image: none;
+	background-color: inherit;
+}
+.tool-button.tool-active, .tool.tool-active.oo-ui-buttonElement-frameless.oo-ui-iconElement {
+	background-color: inherit;
+}
+.wikiEditor-ui-toolbar .tabs span.tab a.current, .wikiEditor-ui-toolbar .tabs span.tab a.current:visited {
+	color: inherit;
+}
+textarea {
+    background-color: var(--color-accent6);
+    color: #90FF90;
+}
+.editOptions {
+    background-color: var(--color-accent6);
+    border-color: var(--color-accent2);
+    color: #ccc;
+}
+div#editpage-specialchars a {
+    background-color: var(--color-background);
+    border-color: var(--color-accent2);
+}
+.mw-editform-legacy input#wpSummary {
+  background-color: var(--color-background);
+  color: #90ff90;
+}
+
+/* Visual Editor */
+.oo-ui-toolbar-bar,
+.oo-ui-popupWidget-popup,
+.oo-ui-popupToolGroup-active.oo-ui-widget-enabled,
+.oo-ui-toolGroup.oo-ui-widget-enabled .oo-ui-tool-link .oo-ui-tool-title,
+.oo-ui-popupToolGroup .oo-ui-toolGroup-tools {
+    background-color:var(--color-accent6);
+    background-image:none;
+    color:white;
+}
+.oo-ui-iconElement-icon {
+    filter: invert(100%); /* Can't style data URI SVGs */
+}
+.oo-ui-windowManager-modal > .oo-ui-dialog {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame {
+    background-color:black;
+}
+.oo-ui-windowManager-modal > .oo-ui-dialog > .oo-ui-window-frame p, body, label, span {
+	color: var(--color-body);
+}
+.oo-ui-textInputWidget input,
+.oo-ui-textInputWidget textarea {
+    background-color: var(--color-accent6);
+    color: var(--color-body);
+}
+.oo-ui-tagItemWidget {
+    background-color: #333;
+    background-image: linear-gradient(to bottom,#222 0,var(--color-background) 100%);
+    color: #eee;
+}
+.oo-ui-buttonElement-framed > .oo-ui-buttonElement-button {
+    background-color: #111;
+    background-image: linear-gradient(to bottom, #222 0, var(--color-background) 100%);
+}
+.oo-ui-buttonElement-framed > .oo-ui-buttonElement-button:focus {
+    /*border-color: #ace;*/
+    /*box-shadow: 0 0 2px 2px #ace;*/
+}
+
+.oo-ui-buttonElement-framed.oo-ui-flaggedElement-progressive > .oo-ui-buttonElement-button {
+    background-color: var(--color-accent6);
+    background-image: linear-gradient(to bottom, --var(color-accent3) 0, var(--color-accent2) 100%);
+}
+.oo-ui-buttonElement > .oo-ui-buttonElement-button { 
+    color:#ccc;
+}
+.oo-ui-pendingElement-pending {
+    /* http://en.wikipedia.org/w/resources/lib/oojs-ui/themes/apex/images/textures/pending.gif */
+    filter:invert(1);
+}
+
+/* Color history interface */
+#pagehistory li {
+    border: 1px solid var(--color-accent6);
+}
+#pagehistory li.selected {
+    background-image: linear-gradient(var(--color-accent5),var(--color-background));
+    border: 1px solid var(--color-accent6);
+}
+span.autocomment { color: var(--color-accent2); }
+
+/* Special:Search */
+.mw-search-profile-tabs,
+#mw-searchoptions {
+  background-color: var(--color-accent6);
+    border-color: var(--color-accent2);
+}
+
+/* Color the file description */
+#filetoc {
+    background-color: var(--color-accent6);
+    border-color: var(--color-accent2);
+}
+
+/*
+.filehistory a img, #file img:hover {
+    /* Green checker board */
+    background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEUAAAAAQABVHvbKAAAAEUlEQVQI12P4z8CAFWEX/Q8Afr8P8erzE9cAAAAASUVORK5CYII=");
+}
+*/
+
+
+/* #################################
+ *             Interface
+ * #################################
+ */
+/* Colors the tabs across the top of the page */
+#p-cactions { 
+    background-color: var(--color-background);  
+}
+#p-cactions li { 
+    background-color: var(--color-background);  
+    border-color: var(--color-accent2);
+}
+#p-cactions li.selected,
+#p-cactions li.new { 
+    background-image: linear-gradient(var(--color-accent5),var(--color-background));
+}
+#p-cactions li a { 
+    background-color: var(--color-background) !important; 
+    color : #7070FF;
+}
+#p-cactions li.selected a {
+    background-image: linear-gradient(var(--color-accent5),var(--color-background));
+}
+/* Vector Tabs */
+div.vectorTabs, div.vectorTabs span { /* left and right tab breaks */
+    /* https://en.wikipedia.org/w/skins/Vector/images/tab-break.png */
+    background-image:none;
+}
+div.vectorTabs { border-left:1px solid black; }
+div.vectorTabs span { border-right:1px solid black; }
+div.vectorTabs ul li {
+    /* https://en.wikipedia.org/w/skins/Vector/images/tab-normal-fade.png */
+    background-image: linear-gradient(var(--color-accent5),var(--color-accent6));
+    border-bottom:1px solid var(--color-accent2);
+}
+div.vectorTabs li.selected {
+    /* https://en.wikipedia.org/w/skins/Vector/images/tab-current-fade.png */
+    background-image: linear-gradient(var(--color-accent5),var(--color-background));
+    border-bottom-color:transparent;
+}
+div.vectorTabs span a {
+    color:#7070FF;
+}
+div.vectorTabs li.selected a,
+div.vectorTabs li.selected a:visited {
+    color:var(--color-a);
+}
+
+/*
+/* Vector watch icon -- XXX contrast issues */
+#ca-watch.icon a {
+    filter:invert(1) hue-rotate(80deg);
+}
+#ca-unwatch.icon a {
+    filter:hue-rotate(280deg);
+} */
+
+/* Vector drop down menus */
+div.vectorMenu h3 span {
+    color:#cccccc;
+}
+div.vectorMenu div.menu {
+    background-color: var(--color-background);
+    border-color: #a2a9b1;
+}
+div.vectorMenu li a {
+    color:#7070FF;
+}
+
+/* User links (preferences, contribs) */
+#p-personal ul {
+    color: var(--color-a);
+    background: none;
+}
+#p-personal li a {
+  color: var(--color-a);
+}
+#p-personal li a:hover {
+  color: var(--color-a-hover);
+}
+/* Bad specificity in originals */
+#pt-mytalk a.mw-echo-alert,
+#pt-mytalk a.mw-echo-alert:hover {
+    color: #222;
+}
+/* Use vector person icon by your username */
+body.skin-monobook li#pt-userpage { background-image: url(/w/skins/Vector/images/user-icon.png); }
+
+
+/* Use black logo */
+#p-logo { 
+    background-color: transparent;
+}
+
+/* .mw-wiki-logo:not([href="/wiki/MediaWiki"]):not([href^="/wiki/Wikidata:"]):not([href^="/wiki/Wiktionary:"]) {
+    /* [[File:WikiGreen.png]] CC-BY-SA */
+    background-image: url(//upload.wikimedia.org/wikipedia/commons/6/6e/WikiGreen.png);
+*/
+
+/* Color side portlets */
+.portlet {
+    background: var(--color-accent5);
+    color: var(--color-body);
+}
+.portlet h3,
+div#mw-panel div.portal h3 {
+    color:var(--color-body);
+}
+.pBody {
+    background: var(--color-background);
+    color: var(--color-body);
+}
+div#mw-panel div.portal div.body ul li a {
+    color:#7070FF;
+}
+div#mw-panel div.portal div.body ul li a:visited {
+    color:#9090D0;
+}
+
+/* Color main search box - Monobook */
+input#searchInput { 
+    /*border: 1px inset; theme/vector conflict */
+    color: var(--color-body); 
+    background : var(--color-background); 
+}
+input.searchButton { 
+    background : var(--color-background); 
+    border: 2px solid;
+    border-color: #00FFFF #008080 #008080 #00FFFF;
+    color : var(--color-body); 
+}
+/* Color main search box - Vector */
+div#simpleSearch,
+div#simpleSearch input {
+    background-color:transparent;
+    background-image:none; /* https://en.wikipedia.org/w/skins/Vector/images/search-fade.png */
+    color: var(--color-body);
+}
+div#simpleSearch #searchInput::placeholder {
+    color: var(--color-accent3);
+}
+/* Search results suggestion box */
+.suggestions-results,
+.suggestions-special {
+    background-color: var(--color-background);
+    border: solid 1px var(--color-body);                            
+}
+.suggestions-special .special-label {
+ 	color: var(--color-accent3);   
+}
+.suggestions-result,
+.suggestions-special .special-query {
+    color:var(--color-body);   
+}
+
+/* Color footer */
+#footer {
+    background-color: Black;
+    color: var(--color-body);
+    border-color: var(--color-a);
+    padding-bottom: 1.2em;
+}
+#footer ul li {/* Vector */
+    color:inherit;
+}
+
+
+
+/************************
+ *  COLOR IN TEMPLATES  *
+ ************************/
+.infobox {
+    background: var(--color-accent6);
+    color:var(--color-body);
+    border-color: var(--color-accent3);
+}
+
+/* Template:Documentation */
+.template-documentation {
+    background-color: var(--color-accent6)!important;
+}
+
+/* template RFA, AN/I closed */
+div.boilerplate,
+.portal > ul {
+    background-color: var(--color-background)!important;
+}
+
+/* */
+div.mw-warning-with-logexcerpt,
+div.mw-lag-warn-high,
+div.mw-cascadeprotectedwarning,
+#mw-protect-cascadeon {
+    background-color: #700;
+    color:#fff;
+}
+
+.mw-trackedTemplate {
+    background: var(--color-accent6) linear-gradient(#333, var(--color-background)) !important;
+    border-color: var(--color-accent2)!important;
+}
+.quotebox, /* Template:Quote */
+.shortcutbox {
+    background-color: var(--color-accent6)!important;
+    border-color: var(--color-accent2)!important;
+}
+body.mediawiki .navbox, 
+body.mediawiki .navbox-subgroup {
+
+}
+/* Template:Tmbox */
+table.tmbox {
+    border: 1px solid #c0c090!important;    /* Default "notice" gray-brown */
+}
+table.tmbox, table.tmbox th, table.tmbox td {
+    background: #430!important;
+}
+/* Template:Key press */
+kbd.keyboard-key {
+    background: #44372c!important;/* XXX override template gradients */
+    border-color: #65594d #110e0D #110e0d #65594d!important;
+    color: #ffffff!important;
+}
+
+/* */
+table.wikitable td.table-yes {
+    background-color: var(--color-accent2)!important;
+}
+table.wikitable td.table-maybe {
+    background-color: #6c7203!important;
+}
+table.wikitable td.table-no {
+    background-color: #ad5053!important;
+}
+table.wikitable td.table-partial {
+    background-color: #7e6b45!important;
+}
+table.wikitable td.table-na, td.table-unknown {
+    background-color: #6d6d6d!important;
+}
+
+/************************
+ *     WIKI-SPECIFIC    *
+ ************************/
+/* History on Commons */
+#histlegend { background-color:inherit!important; }
+/* De-color [[mw:CentralNotice]] */
+#centralNotice, #cnotice-main { background-color:var(--color-background)!important; color:inherit!important; }
+/* de's Flaggedrev */
+.flaggedrevs-color-1 {
+    background-color: #102;
+}
+/* enwiki Monobook.css */
+body.skin-monobook #content,
+body.skin-monobook #p-cactions li a:hover,
+body.skin-monobook #p-cactions li.selected a,
+body.skin-monobook #content div.thumb {          /* "Margin" for thumbs, padding for galleries */
+	background-color: var(--color-background)700;   /* Light blue */
+}
+body.skin-monobook #p-cactions li a {
+	background-color: var(--color-background)700;   /* Light blue-gray inactive tabs */
+}
+
+body.skin-monobook.ns-0 #content,
+body.skin-monobook.ns-0 #p-cactions li a:hover, 
+body.skin-monobook.ns-0 #p-cactions li.selected a, 
+body.skin-monobook.ns-0 #content div.thumb {
+	background-color: var(--color-background);     /* Set back for articles */
+}
+body.skin-monobook.ns-0 #p-cactions li a {
+	background-color: #101010;   /* Light gray inactive tabs in articles */
+}
+
+/************************
+ *        GADGETS       *
+ ************************/
+
+/* [[WP:Navigation popups]] */
+.navpopup {
+    background:var(--color-background);
+    border-color:inherit;
+    color: var(color-body);
+    box-shadow: 0 3px 8px var(--color-accent2);
+}
+.popup_mainlink a {
+     color: var(--color-a);   
+}
+.popup_menu,
+.popup_drop:hover .popup_menu,
+.popup_drop .popup_menu:hover {
+    background-color:var(--color-background);
+}
+.popup_menu a:hover {
+    background-color: #447;
+    color: #ccf;
+}
+del.popupDiff {
+    background-color:#273948;
+}
+ins.popupDiff {
+    background-color:#403618;
+}
+
+/* [[mw:Reference Tooltips]] */
+.referencetooltip li {
+   /*border-color: var(--color-accent2);*/
+   background-color:#001000;
+   /*box-shadow: 2px 4px 2px rgba(0,224,0,0.3); /* tint #00F000 */
+}
+
+/* [[mw:HoverCards]] */
+.mwe-popups {
+    background-color: var(--color-background);
+    box-shadow: /* tint #8e8e93 */
+        0 30px 90px -20px rgba(99,99,102,0.3),
+        0px 0px 1px rgba(142,142,147,0.5);
+}
+.mwe-popups p, body {
+	color: var(--color-body);
+}
+/* callout arrow */
+.mwe-popups.mwe-popups-image-tri:after,
+.mwe-popups.mwe-popups-no-image-tri:after,
+.mwe-popups.mwe-popups-image-tri.flipped_x:after,
+.mwe-popups.mwe-popups-no-image-tri.flipped_x:after { 
+    border-bottom-color: var(--color-background);
+}
+.mwe-popups.flipped_y:after,
+.mwe-popups.flipped_x_y:after {
+    border-top-color:var(--color-background);
+}
+/* callout arrow shadow */
+.mwe-popups.mwe-popups-image-tri:before,
+.mwe-popups.mwe-popups-no-image-tri:before,
+.mwe-popups.mwe-popups-image-tri.flipped_x:before,
+.mwe-popups.mwe-popups-no-image-tri.flipped_x:before {
+    border-bottom-color:var(--color-accent5);
+}
+.mwe-popups.flipped_y:before,
+.mwe-popups.flipped_x_y:before {
+    border-top-color:var(--color-accent5);
+}
+.mwe-popups .mwe-popups-container,
+.mwe-popups .mwe-popups-extract {
+    color: var(--color-accent1);
+}
+.mwe-popups .mwe-popups-extract[dir='ltr']:after {
+    background-image: linear-gradient(to right,rgba(0,0,0,0),var(--color-background) 50%);
+}
+
+/* [[WP:WikEd]] */
+.wikEdDiffFragment,
+.wikEdPreviewArticle,
+.wikEdDiffNoChange,
+.wikEdConsoleWrapper {
+    background-color:inherit;
+}
+.wikEdButtonsPreview,
+.wikEdButtonBarGrip,
+.wikEdButtonBarButtonsWrapperVisible,
+.wikEdButtonBarButtonsWrapperHidden {
+    background-color:#666;
+}
+img.wikEdButton {
+    background-color:#999;
+}
+iframe.wikEdFrame {
+    background-color: white;
+    color: black;
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* [[mw:Echo]] */
+.mw-echo-ui-notificationItemWidget-content-message-header,
+.mw-echo-ui-notificationItemWidget-unread,
+.mw-echo-ui-notificationItemWidget-unread:hover,
+.mw-echo-ui-notificationItemWidget,
+.mw-echo-ui-notificationItemWidget:hover,
+.mw-echo-ui-crossWikiNotificationItemWidget-group,
+.mw-echo-ui-bundleNotificationItemWidget-group {
+    color:#0d0;
+    background-color:#010;
+}
+#pt-notifications-alert .mw-echo-notifications-badge:before {
+    filter:invert(1);
+}
+#pt-notifications-notice .mw-echo-notifications-badge:before {
+    filter:invert(1);
+}
+
+/* [[mw:MediaViewer]] */
+.mw-mmv-post-image {
+    background-color: navy;
+    color: yellow;
+}
+.mw-mmv-image-metadata {
+    background-color: #003;
+}
+.mw-mmv-image-links li, .mw-mmv-credit {
+    color: lime;
+}
+
+/* [[mw:Cite]] */
+ol.references li:target, sup.reference:target {
+    background-color: #033;
+}
+
+/* [[mw:User:Remember the dot/Syntax highlighter]] */
+#wpTextbox0 {
+  filter:saturate(8) invert(1) hue-rotate(180deg);
+}
+#wpTextbox0+#wpTextbox1 {
+  filter:invert(1);
+}
+
+
+/* Wikidata / [[mw:Wikibase]] */
+.wikibase-statementgrouplistview .wikibase-statementlistview {
+    background-color:var(--color-background);   
+}
+.wikibase-statementgroupview .wikibase-statementgroupview-property {
+    background-color:var(--color-accent6);
+}
+.wikibase-statementlistview > .wikibase-toolbar-wrapper {
+    background-color: var(--color-accent5);
+}
+.wikibase-statementgrouplistview .wikibase-statementgroupview-property.wb-edit, .wikibase-statementgroupview-property.wb-edit + .wikibase-statementlistview > .wikibase-toolbar-wrapper {
+    background-color: var(--color-accent2);
+}
+.wikibase-referenceview {
+ 	background-color:darkgreen;   
+}
+.wikibase-referenceview .wikibase-referenceview-heading {
+    background-color:darkgreen;
+}
+/* Wikidata site language */
+.wikibase-sitelinkgroupview .wikibase-sitelinkgroupview-heading-container {
+    background-color:var(--color-accent2);
+}
+.wikibase-sitelinklistview .wikibase-sitelinkview .wikibase-sitelinkview-siteid-container {
+    background-color:var(--color-accent2);
+}
+
+#mw-navigation, #mw-head, #mw-panel, #mw-footer {
+	background-color: var(--color-accent5)!important;
+}
+
+}
+
+
+/* End @media screen */
