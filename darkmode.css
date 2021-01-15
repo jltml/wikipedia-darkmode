@@ -50,10 +50,13 @@ input[type="submit"] {
     cursor: pointer;
 }
 /* Color background */ 
-body, div#globalWrapper {
+body, div#globalWrapper, .mw-page-container, .mw-page-container-inner {
     background-color: var(--color-background);
     background-image: none /* Monobook background */;
     color: var(--color-body);
+}
+.mw-header {
+	background-color: var(--color-accent5);
 }
 #mw-page-base{
     background:none /* Vector background */;
@@ -587,7 +590,7 @@ div#simpleSearch #searchInput::placeholder {
 }
 
 /* Template:Documentation */
-.template-documentation {
+.mw-parser-output div.documentation {
     background-color: var(--color-accent6)!important;
 }
 
@@ -856,6 +859,10 @@ ol.references li:target, sup.reference:target {
 	background-color: var(--color-accent5)!important;
 }
 
+.mwe-popups *, .mwe-popups * p {
+	color: black;
+}
+	
 }
 
 
