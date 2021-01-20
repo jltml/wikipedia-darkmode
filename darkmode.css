@@ -859,7 +859,7 @@ ol.references li:target, sup.reference:target {
 	background-color: var(--color-accent5)!important;
 }
 
-.mwe-popups *, .mwe-popups * p {
+.mwe-popups *, .mwe-popups * p, .rt-tooltipContent cite {
 	color: black;
 }
 	
