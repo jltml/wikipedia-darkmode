@@ -57,6 +57,32 @@ body, div#globalWrapper, .mw-page-container, .mw-page-container-inner {
 }
 .mw-header {
 	background-color: var(--color-accent5);
+	padding: 5px 10px;
+	border-radius: 8px 8px 0 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+#mw-head, .mw-article-toolbar-container {
+	padding: 0 10px;
+	border-radius: 0 0 8px 8px;	
+}
+a .mw-logo, a .mw-logo * {
+	background: #FFF;
+}
+#p-views *, #p-namespaces *, #ca-watch * {
+	background-color: var(--color-background);
+	color: var(--color-a);
+	border-radius: 8px 8px 0 0;
+	opacity: 85%;
+	border: 0;
+}
+.selected .collapsible {
+	opacity: 100%!important;
+	border-radius: 8px;
+}
+#mw-sidebar-button, .mw-logo-container, .mw-echo-notifications-badge {
+	filter: invert(100%);
+	-webkit-filter: invert(100%);
 }
 #mw-page-base{
     background:none /* Vector background */;
@@ -217,9 +243,10 @@ div.thumb div {
 }
 div.thumb div a img {
     /* Transparent PNGs assume light color backgrounds :-( */
-    background-color:#103010;
+    background-color: var(--color-accent3);
     /* TODO: Use film grain texture, so lines are more noticeable */
     border: 1px solid var(--color-accent6);
+    transition: 0.25s;
 }
 div.thumb div a img:hover {
     /* Increase brightness on hover */
@@ -859,10 +886,19 @@ ol.references li:target, sup.reference:target {
 	background-color: var(--color-accent5)!important;
 }
 
-.mwe-popups *, .mwe-popups * p, .rt-tooltipContent cite {
+.mwe-popups *, .mwe-popups * p, .rt-tooltipContent cite, .reference-text, .reference-accessdate, .reference-accessdate *, .ace_paren {
 	color: black;
 }
+
+.mwe-popups::after, .mwe-popups::after *, .mwe-popups * {
+	color: white;
+	background-color: white;
+}
 	
+.mw-echo-ui-notificationItemWidget-content-message-header, .mw-echo-ui-notificationItemWidget-content-actions {
+	color: white;
+}
+
 }
 
 
