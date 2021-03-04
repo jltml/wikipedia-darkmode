@@ -2,7 +2,7 @@
 
 ![Screenshot of Wikipedia with custom dark mode CSS](screenshot.png)
 
-**Custom CSS for Wikipedia that enables a dark color scheme when system/browser dark mode is on.** Pretty rough around the edges at the moment, but it's much better than being blinded at midnight :)
+**Custom CSS for Wikipedia that enables a dark color scheme when system/browser dark mode is on.** Pretty rough around the edges at the moment, but it's much better than being blinded at midnight!
 ## Setup
 Log into Wikipedia and then head to [Preferences (top right) > Appearance](https://en.wikipedia.org/wiki/Special:Preferences#mw-prefsection-rendering). Copy the following line…
 ```css
